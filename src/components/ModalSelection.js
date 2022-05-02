@@ -86,7 +86,7 @@ export default ModalSelection = ({
               <View style={styles.containerSelect}>
                 <Text style={styles.textState}>{labelTitle}</Text>
                 <Image style={styles.image} source={{ uri: image }} />
-                <MeButton onPress={onSubmit} status={status} />
+                <MeButton customMessage={data?.actorName} onPress={onSubmit} status={status} />
               </View>
               {status == "notfound" || status == "error" ? (
                 <TouchableOpacity
@@ -145,7 +145,7 @@ export default ModalSelection = ({
   );
 };
 
-function MeButton({ onPress, status }) {
+function MeButton({ onPress, status, customMessage }) {
   // search | error | notfound | success
 
   const stylesButton = {
@@ -166,7 +166,7 @@ function MeButton({ onPress, status }) {
     error: "Error de red o de servidor",
     search: "Buscando...",
     notfound: "No se encontro",
-    success: "Listo",
+    success: customMessage,
   }[status];
 
   return (
