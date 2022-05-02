@@ -1,0 +1,6 @@
+module Pods_reto_retoTests {
+  umbrella header "Pods-reto-retoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
